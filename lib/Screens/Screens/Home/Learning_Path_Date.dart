@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentprism/ReusableAssets/rounded_BackButton.dart';
+import 'package:mentprism/Screens/Screens/Home/Time_Management_Instructions.dart';
 import 'package:mentprism/const.dart';
 
 class Learning_Path_Date extends StatefulWidget {
@@ -49,10 +50,10 @@ class _Learning_Path_DateState extends State<Learning_Path_Date> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Date_Card(
-                  currentDate: 1,
+                  currentDate: 8,
                 ),
                 Date_Card(
-                  currentDate: 8,
+                  currentDate: 1,
                 ),
                 Date_Card(
                   currentDate: 1,
@@ -86,16 +87,25 @@ class Date_Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: currentDate == 1 ? 45 : 60,
-      width: currentDate == 1 ? 45 : 60,
-      color: currentDate == 1 ? secondaryBlue : yellowColor,
-      margin: EdgeInsets.all(1),
-      child: Center(
-          child: Text(
-        'Day $currentDate',
-        style: currentDate == 1 ? whitecolorBold12 : bluecolorBold16,
-      )),
+    return GestureDetector(
+      onTap: currentDate != 1
+          ? () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return Learning_Path_Instructions();
+              }));
+            }
+          : () {},
+      child: Container(
+        height: currentDate == 1 ? 45 : 60,
+        width: currentDate == 1 ? 45 : 60,
+        color: currentDate == 1 ? secondaryBlue : yellowColor,
+        margin: EdgeInsets.all(1),
+        child: Center(
+            child: Text(
+          'Day $currentDate',
+          style: currentDate == 1 ? whitecolorBold12 : bluecolorBold16,
+        )),
+      ),
     );
   }
 }

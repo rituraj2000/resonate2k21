@@ -20,8 +20,8 @@ class _Home_PageState extends State<Home_Page> {
             User_Box(),
             isEmojiSelected
                 ? Container(
-                    margin: EdgeInsets.all(20),
-                    padding: EdgeInsets.all(20),
+                    margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                    padding: EdgeInsets.all(10),
                     width: double.infinity,
                     decoration: TextBoxDecorationYellow,
                     child: Row(
@@ -33,6 +33,7 @@ class _Home_PageState extends State<Home_Page> {
                               isEmojiSelected = false;
                             });
                           },
+                          emoji: 'happy',
                         ),
                         Emoji_Button(
                           ontap: () {
@@ -40,6 +41,7 @@ class _Home_PageState extends State<Home_Page> {
                               isEmojiSelected = false;
                             });
                           },
+                          emoji: 'happy_2',
                         ),
                         Emoji_Button(
                           ontap: () {
@@ -47,6 +49,7 @@ class _Home_PageState extends State<Home_Page> {
                               isEmojiSelected = false;
                             });
                           },
+                          emoji: 'ok',
                         ),
                         Emoji_Button(
                           ontap: () {
@@ -54,6 +57,15 @@ class _Home_PageState extends State<Home_Page> {
                               isEmojiSelected = false;
                             });
                           },
+                          emoji: 'sad',
+                        ),
+                        Emoji_Button(
+                          ontap: () {
+                            setState(() {
+                              isEmojiSelected = false;
+                            });
+                          },
+                          emoji: 'bad',
                         ),
                       ],
                     ),
@@ -119,15 +131,22 @@ class Heading_20_white extends StatelessWidget {
 }
 
 class Emoji_Button extends StatelessWidget {
-  Emoji_Button({this.ontap});
+  Emoji_Button({this.ontap, this.emoji});
 
   final Function ontap;
+  final String emoji;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: ontap,
-      child: CircleAvatar(backgroundColor: yellowColor, radius: 30),
+      child: CircleAvatar(
+        backgroundColor: secondaryBlue,
+        radius: 30,
+        child: Image(
+          image: AssetImage('assets/images/emojis/$emoji.png'),
+        ),
+      ),
     );
   }
 }
