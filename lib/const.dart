@@ -46,17 +46,29 @@ TextStyle whitecolorBold12 = TextStyle(
   fontSize: 12,
   fontWeight: FontWeight.w700,
 );
+TextStyle bluecolorBold16 = TextStyle(
+  fontFamily: 'Poppins',
+  color: primaryBlue,
+  fontSize: 16,
+  fontWeight: FontWeight.w700,
+);
 TextStyle whitecolorLight14 = TextStyle(
   fontFamily: 'Poppins',
   color: Colors.white,
   fontSize: 14,
   fontWeight: FontWeight.w200,
 );
-TextStyle whitecolorLight20 = TextStyle(
+TextStyle whitecolorBold20 = TextStyle(
   fontFamily: 'Poppins',
   color: Colors.white,
   fontSize: 20,
   fontWeight: FontWeight.w200,
+);
+TextStyle whitecolorLight20 = TextStyle(
+  fontFamily: 'Poppins',
+  color: Colors.white,
+  fontSize: 20,
+  fontWeight: FontWeight.w700,
 );
 
 //**

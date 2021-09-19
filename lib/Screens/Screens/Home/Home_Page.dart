@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mentprism/Screens/Screens/Home/Learning_Path_Date.dart';
 import 'package:mentprism/const.dart';
 
 class Home_Page extends StatefulWidget {
@@ -59,7 +60,41 @@ class _Home_PageState extends State<Home_Page> {
                   )
                 : SizedBox(),
             Heading_20_white(),
+            Learning_Path(
+              learningpath: 'Time Management',
+              ontap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return Learning_Path_Date();
+                }));
+              },
+            ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class Learning_Path extends StatelessWidget {
+  Learning_Path({this.learningpath, this.ontap});
+
+  final String learningpath;
+  final Function ontap;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: ontap,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        height: 220,
+        width: 170,
+        decoration: SquareBoxDecoration,
+        child: Center(
+          child: Text(
+            learningpath,
+            style: whitecolorBold14,
+          ),
         ),
       ),
     );
@@ -77,7 +112,7 @@ class Heading_20_white extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: Text(
         'Select a Learning Path',
-        style: whitecolorLight20,
+        style: whitecolorBold20,
       ),
     );
   }
