@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentprism/ReusableAssets/Progress_Bar.dart';
+import 'package:mentprism/Screens/Screens/Home/Learing_path_Quiz.dart';
 import 'package:mentprism/Screens/Screens/RescueSession/RescueQuiz.dart';
 import 'package:mentprism/Screens/Screens/RescueSession/rescue_question.dart';
 import 'package:mentprism/const.dart';
@@ -49,7 +50,7 @@ class _Learning_Path_InstructionsState
                       : () {
                           Navigator.push(context,
                               MaterialPageRoute(builder: (context) {
-                            return RescueQuiz();
+                            return Learning_Path_Quiz();
                           }));
                         },
                 )
