@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mentprism/ReusableAssets/Progress_Bar.dart';
 import 'package:mentprism/Screens/Screens/Home/Learing_path_Quiz.dart';
-import 'package:mentprism/Screens/Screens/RescueSession/RescueQuiz.dart';
-import 'package:mentprism/Screens/Screens/RescueSession/rescue_question.dart';
 import 'package:mentprism/const.dart';
 import 'package:mentprism/ReusableAssets/rounded_BackButton.dart';
-import 'package:mentprism/Screens/Screens/RescueSession/Rescue_InitialText.dart';
+import 'L_Path_Init_Text.dart';
 
 class Learning_Path_Instructions extends StatefulWidget {
   @override
@@ -16,7 +14,7 @@ class Learning_Path_Instructions extends StatefulWidget {
 class _Learning_Path_InstructionsState
     extends State<Learning_Path_Instructions> {
   int current_text_index = 0;
-  Rescue_intitialText _rescue_intitialText = Rescue_intitialText();
+  L_Path_intitialText l_path_instructions = L_Path_intitialText();
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +35,11 @@ class _Learning_Path_InstructionsState
                     style: white30HeadingLight,
                   ),
                 ),
-                Problem_Description(
-                  rescue_intitialText: _rescue_intitialText,
+                L_Path_Instructions(
+                  l_path_intitialText: l_path_instructions,
                   initial_text_index: current_text_index,
                   ontap: current_text_index !=
-                          (_rescue_intitialText.initial_texts.length - 1)
+                          (l_path_instructions.initial_texts.length - 1)
                       ? () {
                           setState(() {
                             current_text_index++;
@@ -64,11 +62,11 @@ class _Learning_Path_InstructionsState
   }
 }
 
-class Problem_Description extends StatelessWidget {
-  Problem_Description(
-      {this.initial_text_index, this.rescue_intitialText, this.ontap});
+class L_Path_Instructions extends StatelessWidget {
+  L_Path_Instructions(
+      {this.initial_text_index, this.l_path_intitialText, this.ontap});
 
-  final Rescue_intitialText rescue_intitialText;
+  final L_Path_intitialText l_path_intitialText;
   final int initial_text_index;
 
   final Function ontap;
@@ -80,7 +78,7 @@ class Problem_Description extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 33, vertical: 10),
         child: Text(
-          rescue_intitialText.initial_texts[initial_text_index],
+          l_path_intitialText.initial_texts[initial_text_index],
           style: whitecolorLight20,
         ),
       ),

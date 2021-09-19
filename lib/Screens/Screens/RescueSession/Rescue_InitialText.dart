@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mentprism/ReusableAssets/Progress_Bar.dart';
 import 'package:mentprism/Screens/Screens/RescueSession/RescueQuiz.dart';
-import 'package:mentprism/Screens/Screens/RescueSession/rescue_question.dart';
+import 'package:mentprism/Screens/Screens/RescueSession/rescue_Init_Text.dart';
 import 'package:mentprism/const.dart';
 import 'package:mentprism/ReusableAssets/rounded_BackButton.dart';
 import 'package:mentprism/Screens/Screens/RescueSession/Rescue_InitialText.dart';

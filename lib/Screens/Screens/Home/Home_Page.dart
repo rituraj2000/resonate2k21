@@ -14,73 +14,117 @@ class _Home_PageState extends State<Home_Page> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            User_Box(),
-            isEmojiSelected
-                ? Container(
-                    margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
-                    padding: EdgeInsets.all(10),
-                    width: double.infinity,
-                    decoration: TextBoxDecorationYellow,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Emoji_Button(
-                          ontap: () {
-                            setState(() {
-                              isEmojiSelected = false;
-                            });
-                          },
-                          emoji: 'happy',
-                        ),
-                        Emoji_Button(
-                          ontap: () {
-                            setState(() {
-                              isEmojiSelected = false;
-                            });
-                          },
-                          emoji: 'happy_2',
-                        ),
-                        Emoji_Button(
-                          ontap: () {
-                            setState(() {
-                              isEmojiSelected = false;
-                            });
-                          },
-                          emoji: 'ok',
-                        ),
-                        Emoji_Button(
-                          ontap: () {
-                            setState(() {
-                              isEmojiSelected = false;
-                            });
-                          },
-                          emoji: 'sad',
-                        ),
-                        Emoji_Button(
-                          ontap: () {
-                            setState(() {
-                              isEmojiSelected = false;
-                            });
-                          },
-                          emoji: 'bad',
-                        ),
-                      ],
-                    ),
-                  )
-                : SizedBox(),
-            Heading_20_white(),
-            Learning_Path(
-              learningpath: 'Time Management',
-              ontap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Learning_Path_Date();
-                }));
-              },
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              User_Box(),
+              isEmojiSelected
+                  ? Container(
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+                      padding: EdgeInsets.all(10),
+                      width: double.infinity,
+                      decoration: TextBoxDecorationYellow,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Emoji_Button(
+                            ontap: () {
+                              setState(() {
+                                isEmojiSelected = false;
+                              });
+                            },
+                            emoji: 'happy',
+                          ),
+                          Emoji_Button(
+                            ontap: () {
+                              setState(() {
+                                isEmojiSelected = false;
+                              });
+                            },
+                            emoji: 'happy_2',
+                          ),
+                          Emoji_Button(
+                            ontap: () {
+                              setState(() {
+                                isEmojiSelected = false;
+                              });
+                            },
+                            emoji: 'ok',
+                          ),
+                          Emoji_Button(
+                            ontap: () {
+                              setState(() {
+                                isEmojiSelected = false;
+                              });
+                            },
+                            emoji: 'sad',
+                          ),
+                          Emoji_Button(
+                            ontap: () {
+                              setState(() {
+                                isEmojiSelected = false;
+                              });
+                            },
+                            emoji: 'bad',
+                          ),
+                        ],
+                      ),
+                    )
+                  : SizedBox(),
+              Heading_20_white(),
+              SizedBox(
+                height: 25,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Learning_Path(
+                    learningpath: 'Strtess Management',
+                    ontap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Learning_Path_Date();
+                      }));
+                    },
+                  ),
+                  Learning_Path(
+                    learningpath: 'Fight     Depression',
+                    ontap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Learning_Path_Date();
+                      }));
+                    },
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Learning_Path(
+                    learningpath: 'Maintain Relationships',
+                    ontap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Learning_Path_Date();
+                      }));
+                    },
+                  ),
+                  Learning_Path(
+                    learningpath: 'Deal with Depression',
+                    ontap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Learning_Path_Date();
+                      }));
+                    },
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -98,7 +142,8 @@ class Learning_Path extends StatelessWidget {
     return GestureDetector(
       onTap: ontap,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+        margin: EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+        padding: EdgeInsets.all(20),
         height: 220,
         width: 170,
         decoration: SquareBoxDecoration,
@@ -161,7 +206,6 @@ class User_Box extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(20),
       padding: EdgeInsets.all(20),
-      height: 180,
       width: double.infinity,
       decoration: TextBoxDecoration,
       child: Row(
@@ -177,16 +221,18 @@ class User_Box extends StatelessWidget {
                 style: white30Heading,
               ),
               Text(
-                'Rituraj',
+                'Lucy',
                 style: white45Heading,
               ),
             ],
           ),
-          CircleAvatar(
-            radius: 60,
-            backgroundColor: yellowColor,
-            child: Image(
-              image: AssetImage('assets/images/user_pic.png'),
+          ClipOval(
+            child: CircleAvatar(
+              radius: 60,
+              backgroundColor: yellowColor,
+              child: Image(
+                image: AssetImage('assets/images/user_pic.png'),
+              ),
             ),
           )
         ],

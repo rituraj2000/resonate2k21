@@ -50,25 +50,25 @@ class _Learning_Path_DateState extends State<Learning_Path_Date> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Date_Card(
-                  currentDate: 8,
-                ),
-                Date_Card(
                   currentDate: 1,
                 ),
                 Date_Card(
-                  currentDate: 1,
+                  currentDate: 2,
                 ),
                 Date_Card(
-                  currentDate: 1,
+                  currentDate: 3,
                 ),
                 Date_Card(
-                  currentDate: 1,
+                  currentDate: 4,
                 ),
                 Date_Card(
-                  currentDate: 1,
+                  currentDate: 5,
                 ),
                 Date_Card(
-                  currentDate: 1,
+                  currentDate: 6,
+                ),
+                Date_Card(
+                  currentDate: 7,
                 ),
               ],
             ),
@@ -88,7 +88,7 @@ class Date_Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: currentDate != 1
+      onTap: currentDate == 1
           ? () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return Learning_Path_Instructions();
@@ -96,14 +96,14 @@ class Date_Card extends StatelessWidget {
             }
           : () {},
       child: Container(
-        height: currentDate == 1 ? 45 : 60,
-        width: currentDate == 1 ? 45 : 60,
-        color: currentDate == 1 ? secondaryBlue : yellowColor,
+        height: currentDate != 1 ? 45 : 60,
+        width: currentDate != 1 ? 45 : 60,
+        color: currentDate != 1 ? secondaryBlue : yellowColor,
         margin: EdgeInsets.all(1),
         child: Center(
             child: Text(
           'Day $currentDate',
-          style: currentDate == 1 ? whitecolorBold12 : bluecolorBold16,
+          style: currentDate != 1 ? whitecolorBold12 : bluecolorBold16,
         )),
       ),
     );

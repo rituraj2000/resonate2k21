@@ -34,11 +34,15 @@ class _Main_DisplayState extends State<Main_Display> {
             child: BottomNavigationBar(
               backgroundColor: pinkColor,
               currentIndex: currentindex,
+              iconSize: 20,
+              selectedFontSize: 15,
+              selectedLabelStyle: whitecolorBold12,
+              selectedItemColor: Colors.white,
               items: [
                 BottomNavigationBarItem(
-                  icon: Icon(FontAwesomeIcons.pencilAlt),
+                  icon: Icon(FontAwesomeIcons.smileBeam),
                   label: 'Your Profile',
-                  backgroundColor: secondaryBlue,
+                  backgroundColor: Colors.red,
                 ),
                 BottomNavigationBarItem(
                   icon: Icon(FontAwesomeIcons.pencilAlt),
