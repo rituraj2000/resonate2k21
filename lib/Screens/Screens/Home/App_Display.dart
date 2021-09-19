@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mentprism/Screens/Screens//Journal_Page/write_Journal.dart';
+import 'package:mentprism/Screens/Screens/Home/Home_Page.dart';
 import 'package:mentprism/Screens/Screens/Journal_Page/Journal_MainPage.dart';
 import 'package:mentprism/Screens/Screens/RescueSession/Rescue_Session_Main.dart';
 import 'package:mentprism/const.dart';
 
-class Home extends StatefulWidget {
+class Main_Display extends StatefulWidget {
   @override
-  _HomeState createState() => _HomeState();
+  _Main_DisplayState createState() => _Main_DisplayState();
 }
 
-class _HomeState extends State<Home> {
+class _Main_DisplayState extends State<Main_Display> {
   int currentindex = 0;
 
   final List screens = [Home_Page(), Journal_Main(), Rescue_Session()];
@@ -57,23 +58,6 @@ class _HomeState extends State<Home> {
               },
             ),
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class Home_Page extends StatelessWidget {
-  const Home_Page({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: FlatButton(
-          child: Text('Home'),
         ),
       ),
     );

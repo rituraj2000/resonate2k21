@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentprism/Screens/Screens//Journal_Page/write_Journal.dart';
-import 'package:mentprism/Screens/Screens/Home/Home.dart';
+import 'package:mentprism/Screens/Screens/Home/App_Display.dart';
 import 'const.dart';
 
 void main() {
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(),
-      home: Home(),
+      home: Main_Display(),
     );
   }
 }

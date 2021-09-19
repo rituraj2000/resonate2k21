@@ -18,18 +18,22 @@ class Quiz {
       ],
     ),
     quiz_question(
-      question: 'Question2',
+      question: 'Question5',
       options: [
         quiz_option(
-          option: 'Option2',
+          option: 'Option8',
           point: 5,
         ),
         quiz_option(
-          option: 'Option3',
+          option: 'Option3232',
           point: 7,
         ),
         quiz_option(
-          option: 'Option4',
+          option: 'Option376762',
+          point: 2,
+        ),
+        quiz_option(
+          option: 'Option3434342',
           point: 2,
         ),
       ],

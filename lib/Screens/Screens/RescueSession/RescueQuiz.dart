@@ -28,23 +28,57 @@ class _RescueQuizState extends State<RescueQuiz> {
               children: [
                 Progress_Tab(),
                 Top_Heading(),
-                Quiz_Question(quiz: quiz),
+                Quiz_Question(
+                  quiz: quiz,
+                  question_index: current_index,
+                ),
                 Answer_Button(
                   quiz: quiz,
+                  question_index: current_index,
                   option_number: 0,
                   ontap: () {
-                    setState(() {
-                      current_index++;
-                    });
+                    if (current_index != (quiz.quiz_Question.length - 1)) {
+                      setState(() {
+                        current_index++;
+                      });
+                    }
                   },
                 ),
                 Answer_Button(
                   quiz: quiz,
+                  question_index: current_index,
                   option_number: 1,
+                  ontap: () {
+                    if (current_index != (quiz.quiz_Question.length - 1)) {
+                      setState(() {
+                        current_index++;
+                      });
+                    }
+                  },
                 ),
                 Answer_Button(
                   quiz: quiz,
+                  question_index: current_index,
                   option_number: 2,
+                  ontap: () {
+                    if (current_index != (quiz.quiz_Question.length - 1)) {
+                      setState(() {
+                        current_index++;
+                      });
+                    }
+                  },
+                ),
+                Answer_Button(
+                  quiz: quiz,
+                  question_index: current_index,
+                  option_number: 2,
+                  ontap: () {
+                    if (current_index != (quiz.quiz_Question.length - 1)) {
+                      setState(() {
+                        current_index++;
+                      });
+                    }
+                  },
                 ),
               ],
             ),
@@ -57,10 +91,12 @@ class _RescueQuizState extends State<RescueQuiz> {
 }
 
 class Answer_Button extends StatelessWidget {
-  Answer_Button({this.quiz, this.option_number, this.ontap});
+  Answer_Button(
+      {this.quiz, this.option_number, this.ontap, this.question_index});
   final Quiz quiz;
   final int option_number;
   final Function ontap;
+  final int question_index;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +111,7 @@ class Answer_Button extends StatelessWidget {
             color: secondaryBlue,
             borderRadius: BorderRadius.all(Radius.circular(10))),
         child: Text(
-          quiz.quiz_Question[0].options[option_number].option,
+          quiz.quiz_Question[question_index].options[option_number].option,
           style: whitecolorBold14,
         ),
       ),
@@ -86,19 +122,17 @@ class Answer_Button extends StatelessWidget {
 // Widgets
 
 class Quiz_Question extends StatelessWidget {
-  const Quiz_Question({
-    Key key,
-    @required this.quiz,
-  }) : super(key: key);
+  Quiz_Question({this.quiz, this.question_index});
 
   final Quiz quiz;
+  final int question_index;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 30),
       child: Text(
-        quiz.quiz_Question[1].question,
+        quiz.quiz_Question[question_index].question,
         style: whitecolorLight20,
       ),
     );

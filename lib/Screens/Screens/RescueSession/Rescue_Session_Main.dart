@@ -88,7 +88,7 @@ class Problem_Box extends StatelessWidget {
         padding: EdgeInsets.all(20),
         height: 150,
         width: 150,
-        decoration: ProblemBoxDecoration,
+        decoration: SquareBoxDecoration,
         child: Center(
           child: Text(
             problem,
@@ -108,22 +108,7 @@ class Problem_Box extends StatelessWidget {
 *
 *
 * */
-// Decorations
 
-BoxDecoration TextBoxDecoration = BoxDecoration(
-    color: secondaryBlue,
-    borderRadius: BorderRadius.all(Radius.circular(15)),
-    boxShadow: [
-      BoxShadow(
-        color: Colors.black.withOpacity(0.3),
-        offset: Offset(-4, 5),
-      ),
-    ]);
-
-BoxDecoration ProblemBoxDecoration = BoxDecoration(
-  color: secondaryBlue,
-  borderRadius: BorderRadius.all(Radius.circular(20)),
-);
 /*
 *
 *
