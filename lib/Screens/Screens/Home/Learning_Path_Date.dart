@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mentprism/ReusableAssets/rounded_BackButton.dart';
-import 'package:mentprism/Screens/Screens/Home/Time_Management_Instructions.dart';
+import 'package:mentprism/Screens/Screens/Home/Learning_Path_Instructions.dart';
 import 'package:mentprism/const.dart';
 
 class Learning_Path_Date extends StatefulWidget {

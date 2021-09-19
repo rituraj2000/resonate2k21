@@ -33,7 +33,7 @@ class _Learning_Path_InstructionsState
                   padding:
                       const EdgeInsets.symmetric(horizontal: 28, vertical: 40),
                   child: Text(
-                    'Know What you are facing',
+                    'Lets go deeper into: Time Management',
                     style: white30HeadingLight,
                   ),
                 ),

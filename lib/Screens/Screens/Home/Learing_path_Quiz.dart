@@ -4,6 +4,7 @@ import 'package:mentprism/ReusableAssets/rounded_BackButton.dart';
 import 'package:mentprism/Screens/Screens/Journal_Page/questions_Journal.dart';
 import 'package:mentprism/const.dart';
 import 'Learning_Path_Quiz_Questions.dart';
+import 'Learning_Path_Journal.dart';
 
 class Learning_Path_Quiz extends StatefulWidget {
   @override
@@ -41,7 +42,11 @@ class _Learning_Path_QuizState extends State<Learning_Path_Quiz> {
                       setState(() {
                         current_index++;
                       });
-                    }
+                    } else
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return Learning_Path_Journal();
+                      }));
                   },
                 ),
                 Answer_Button(
@@ -150,7 +155,7 @@ class Top_Heading extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 40),
       child: Text(
-        'Lets know You a bit better',
+        'Lets analyse Your Approaches',
         style: white30Heading,
       ),
     );
